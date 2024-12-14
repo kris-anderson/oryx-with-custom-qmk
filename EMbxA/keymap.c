@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_F8,          KC_F9,          KC_F4,          KC_F10,         KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_LEFT_SHIFT,  KC_HYPR,                                        KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F11,         KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_LEFT_CTRL,   KC_NO,          KC_NO,          KC_NO,          KC_MEH,                                         KC_TRANSPARENT, KC_F7,          KC_F6,          KC_F5,          KC_F12,         KC_TRANSPARENT, 
-                                                    TO(0),          KC_TRANSPARENT,                                 KC_NO,          KC_NO
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_NO,          KC_NO
   ),
   [4] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, LGUI(LSFT(KC_LBRC)),LGUI(LSFT(KC_RBRC)),LGUI(KC_LBRC),  LGUI(KC_RBRC),  KC_MEDIA_PLAY_PAUSE,
@@ -69,12 +69,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case MT(MOD_LALT, KC_S):
-            return TAPPING_TERM -15;
         case KC_SPACE:
             return TAPPING_TERM + 50;
-        case MT(MOD_RALT, KC_L):
-            return TAPPING_TERM -15;
         case KC_M:
             return TAPPING_TERM + 50;
         case KC_ESCAPE:
