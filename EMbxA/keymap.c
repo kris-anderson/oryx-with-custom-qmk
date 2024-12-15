@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,           KC_W,           KC_E,           LT(4,KC_R),     KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,        
     KC_BSPC,        LT(2,KC_A),     MT(MOD_LALT, KC_S),MT(MOD_LGUI, KC_D),MT(MOD_LSFT, KC_F),ALL_T(KC_G),                                    ALL_T(KC_H),    MT(MOD_RSFT, KC_J),MT(MOD_RGUI, KC_K),MT(MOD_RALT, KC_L),LT(2,KC_SCLN),  KC_QUOTE,       
     TD(DANCE_0),    MT(MOD_LCTL, KC_Z),KC_X,           KC_C,           LT(1,KC_V),     MEH_T(KC_B),                                    MEH_T(KC_N),    KC_M,           KC_COMMA,       KC_DOT,         MT(MOD_RCTL, KC_SLASH),KC_ENTER,       
-                                                    LGUI(KC_SPACE), KC_SPACE,                                       KC_ESCAPE,      CW_TOGG
+                                                    KC_ESCAPE,      KC_SPACE,                                       KC_RIGHT_SHIFT, CW_TOGG
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, RGB_SLD,        RGB_MODE_FORWARD,TOGGLE_LAYER_COLOR,RGB_TOG,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_F8,          KC_F9,          KC_F4,          KC_F10,         KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_LEFT_SHIFT,  KC_HYPR,                                        KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F11,         KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_LEFT_CTRL,   KC_NO,          KC_NO,          KC_NO,          KC_MEH,                                         KC_TRANSPARENT, KC_F7,          KC_F6,          KC_F5,          KC_F12,         KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_LEFT_SHIFT,  KC_HYPR,                                        KC_TRANSPARENT, KC_F4,          KC_F5,          KC_F6,          KC_F11,         KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_LEFT_CTRL,   KC_NO,          KC_NO,          KC_NO,          KC_MEH,                                         KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F12,         KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_NO,          KC_NO
   ),
   [4] = LAYOUT_voyager(
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI(KC_SPACE):
+        case KC_ESCAPE:
             return TAPPING_TERM + 50;
         case KC_M:
             return TAPPING_TERM + 50;
