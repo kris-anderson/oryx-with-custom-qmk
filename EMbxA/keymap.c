@@ -1,10 +1,9 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
-#include "i18n.h"
-#include "features/achordion.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
+#include "features/achordion.h"
 void matrix_scan_user(void) {
   achordion_task();
 }
