@@ -5,13 +5,13 @@
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
-enum custom_keycodes {
-  RGB_SLD = ML_SAFE_RANGE,
-};
-
 void matrix_scan_user(void) {
   achordion_task();
 }
+
+enum custom_keycodes {
+  RGB_SLD = ML_SAFE_RANGE,
+};
 
 enum tap_dance_codes {
   DANCE_0,
