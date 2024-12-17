@@ -11,7 +11,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    LGUI(LSFT(KC_SPACE)),LGUI(LSFT(KC_2)),LGUI(LSFT(KC_3)),LGUI(KC_S),     LGUI(KC_R),     LGUI(KC_SPACE),                                 KC_HOME,        LGUI(KC_C),     LGUI(KC_V),     KC_END,         KC_DELETE,      KC_MEDIA_PLAY_PAUSE,
+    LGUI(KC_S),     LGUI(LSFT(KC_2)),LGUI(LSFT(KC_3)),LGUI(KC_C),     LGUI(KC_V),     LGUI(KC_R),                                     KC_HOME,        LGUI(KC_SPACE), LGUI(LSFT(KC_SPACE)),KC_END,         KC_DELETE,      KC_MEDIA_PLAY_PAUSE,
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           CW_TOGG,        
     ALL_T(KC_ESCAPE),MT(MOD_LCTL, KC_A),MT(MOD_LALT, KC_S),MT(MOD_LGUI, KC_D),MT(MOD_LSFT, KC_F),KC_G,                                           KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_RGUI, KC_K),MT(MOD_RALT, KC_L),MT(MOD_RCTL, KC_SCLN),ALL_T(KC_QUOTE),
     MEH_T(KC_GRAVE),LT(4,KC_Z),     LT(3,KC_X),     LT(2,KC_C),     LT(1,KC_V),     KC_B,                                           KC_N,           LT(1,KC_M),     KC_COMMA,       KC_DOT,         KC_SLASH,       MEH_T(KC_MINUS),
