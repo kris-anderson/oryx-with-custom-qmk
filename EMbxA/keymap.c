@@ -26,8 +26,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_HOME,        LGUI(KC_MINUS), LGUI(KC_EQUAL), LGUI(KC_0),     KC_END,         KC_MEDIA_PREV_TRACK,
-    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          LGUI(KC_F),     LGUI(LSFT(KC_F)),LGUI(LSFT(KC_E)),LGUI(LSFT(KC_G)),KC_MS_UP,       KC_AUDIO_VOL_UP,
-    KC_TRANSPARENT, KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_LEFT_SHIFT,  KC_NO,                                          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_MS_DOWN,     KC_AUDIO_VOL_DOWN,
+    KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          LGUI(KC_F),     LGUI(LSFT(KC_F)),LGUI(LSFT(KC_E)),LGUI(LSFT(KC_G)),KC_MS_WH_UP,    KC_AUDIO_VOL_UP,
+    KC_TRANSPARENT, KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_LEFT_SHIFT,  KC_NO,                                          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_MS_WH_DOWN,  KC_AUDIO_VOL_DOWN,
     KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_NO,                                          LGUI(LCTL(KC_SPACE)),LGUI(LSFT(KC_LBRC)),LGUI(LSFT(KC_RBRC)),LGUI(KC_LBRC),  LGUI(KC_RBRC),  KC_AUDIO_MUTE,  
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_MEDIA_NEXT_TRACK,KC_MEDIA_PLAY_PAUSE
   ),
