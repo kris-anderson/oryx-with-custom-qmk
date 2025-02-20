@@ -26,14 +26,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_DLR,         KC_7,           KC_8,           KC_9,           KC_PLUS,        KC_ASTR,        
-    KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_TRANSPARENT, KC_LEFT_SHIFT,  KC_TRANSPARENT,                                 KC_COLN,        KC_4,           KC_5,           KC_6,           KC_MINUS,       KC_SLASH,       
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_PERC,        KC_7,           KC_8,           KC_9,           KC_PLUS,        KC_ASTR,        
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_DLR,         KC_4,           KC_5,           KC_6,           KC_MINUS,       KC_SLASH,       
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_COMMA,       KC_1,           KC_2,           KC_3,           KC_DOT,         KC_EQUAL,       
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_0,           QK_LLCK
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_COLN,        KC_0
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_HOME,        LGUI(KC_MINUS), LGUI(KC_EQUAL), LGUI(KC_0),     KC_END,         KC_MEDIA_PREV_TRACK,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 LGUI(KC_F),     LGUI(LSFT(KC_F)),LGUI(LSFT(KC_E)),LGUI(LSFT(KC_G)),LGUI(KC_N),     KC_AUDIO_VOL_UP,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 LGUI(KC_F),     LGUI(KC_BSLS),  LGUI(LSFT(KC_F)),LGUI(LSFT(KC_E)),LGUI(LSFT(KC_G)),KC_AUDIO_VOL_UP,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       LGUI(KC_S),     KC_AUDIO_VOL_DOWN,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 LGUI(LCTL(KC_SPACE)),LGUI(LSFT(KC_LBRC)),LGUI(LSFT(KC_RBRC)),LGUI(KC_LBRC),  LGUI(KC_RBRC),  KC_AUDIO_MUTE,  
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_MEDIA_NEXT_TRACK,KC_MEDIA_PLAY_PAUSE
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_voyager(
     MAC_LOCK,       MAC_DND,        LCTL(KC_F1),    LCTL(KC_F2),    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_BSLS,        KC_LABK,        KC_RABK,        KC_LBRC,        KC_RBRC,        KC_PERC,                                        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_AMPR,        KC_AT,          KC_HASH,        KC_LPRN,        KC_RPRN,        KC_MINUS,                                       KC_TRANSPARENT, KC_TRANSPARENT, KC_RIGHT_SHIFT, KC_RIGHT_GUI,   KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_AMPR,        KC_AT,          KC_HASH,        KC_LPRN,        KC_RPRN,        KC_MINUS,                                       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TILD,        KC_QUES,        KC_EXLM,        KC_LCBR,        KC_RCBR,        KC_UNDS,                                        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_CIRC,                                        KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -136,8 +136,7 @@ void dance_0_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[0].step = dance_step(state);
     switch (dance_state[0].step) {
         case SINGLE_TAP: register_code16(LGUI(KC_C)); break;
-        case SINGLE_HOLD: register_code16(LGUI(KC_X)); break;
-        case DOUBLE_TAP: register_code16(LGUI(KC_C)); register_code16(LGUI(KC_C)); break;
+        case DOUBLE_TAP: register_code16(LGUI(KC_X)); break;
         case DOUBLE_SINGLE_TAP: tap_code16(LGUI(KC_C)); register_code16(LGUI(KC_C));
     }
 }
@@ -146,8 +145,7 @@ void dance_0_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[0].step) {
         case SINGLE_TAP: unregister_code16(LGUI(KC_C)); break;
-        case SINGLE_HOLD: unregister_code16(LGUI(KC_X)); break;
-        case DOUBLE_TAP: unregister_code16(LGUI(KC_C)); break;
+        case DOUBLE_TAP: unregister_code16(LGUI(KC_X)); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(LGUI(KC_C)); break;
     }
     dance_state[0].step = 0;
@@ -171,8 +169,7 @@ void dance_1_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[1].step = dance_step(state);
     switch (dance_state[1].step) {
         case SINGLE_TAP: register_code16(LGUI(KC_V)); break;
-        case SINGLE_HOLD: register_code16(LALT(LGUI(LSFT(KC_V)))); break;
-        case DOUBLE_TAP: register_code16(LGUI(KC_V)); register_code16(LGUI(KC_V)); break;
+        case DOUBLE_TAP: register_code16(LALT(LGUI(LSFT(KC_V)))); break;
         case DOUBLE_SINGLE_TAP: tap_code16(LGUI(KC_V)); register_code16(LGUI(KC_V));
     }
 }
@@ -181,8 +178,7 @@ void dance_1_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[1].step) {
         case SINGLE_TAP: unregister_code16(LGUI(KC_V)); break;
-        case SINGLE_HOLD: unregister_code16(LALT(LGUI(LSFT(KC_V)))); break;
-        case DOUBLE_TAP: unregister_code16(LGUI(KC_V)); break;
+        case DOUBLE_TAP: unregister_code16(LALT(LGUI(LSFT(KC_V)))); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(LGUI(KC_V)); break;
     }
     dance_state[1].step = 0;
